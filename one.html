@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر العالم الاخر</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #007BFF;
+            text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+            }
+            to {
+                text-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF;
+            }
+        }
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* مسافة بين المنتجات */
+            flex-wrap: wrap; /* لجعل المنتجات تنتقل إلى السطر التالي إذا لم تكن المساحة كافية */
+        }
+        .product-list li {
+            margin: 20px 0;
+            width: 200px; /* عرض ثابت لكل منتج */
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-list li:hover {
+            transform: scale(1.05); /* تكبير العنصر عند التمرير */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+        }
+        .product-list img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out; /* إضافة تأثير الانتقال */
+        }
+        .product-list img:hover {
+            transform: scale(1.2); /* تكبير الصورة عند التمرير */
+        }
+        .product-price {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .product-details {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleDetails(event) {
+            const details = event.currentTarget.querySelector('.product-details');
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+            } else {
+                details.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>مرحباً بكم في متجر العالم الاخر</h1>
+    <p>اكتشفوا أفضل المنتجات الخاصة بالكوسبلاي، الأنمي، والأدوات السحرية!</p>
+    <ul class="product-list">
+        <li onclick="toggleDetails(event)">
+            <img src="https://m.media-amazon.com/images/I/414Dv81yuUL._AC_SL1000_.jpg" alt="زي كوسبلاي">
+            زي كوسبلاي لشخصية غوجو مشهورة
+            <p class="product-price">السعر: 4000 EGP</p>
+            <div class="product-details">تفاصيل المنتج: زي كوسبلاي عالي الجودة مصنوع من مواد ممتازة.</div>
+        </li>
+        <li onclick="toggleDetails(event)">
+            <img src="https://gstoreq8.com/images/%D8%B5%D9%88%D8%B1%20%D9%88%D8%B5%D9%81%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA/G15966/Untitled-5555.webp?1735722828198" alt="مجسمات أنمي قاتل الشياطين">
+            مجسم أنمي عالي الجودة
+            <p class="product-price">السعر: 2800 EGP</p>
+            <div class="product-details">تفاصيل المنتج: مجسم دقيق التفاصيل لشخصيات أنمي شهيرة.</div>
+        </li>
+        <li onclick="toggleDetails(event)">
+            <img src="https://gstoreq8.com/images/%D8%B5%D9%88%D8%B1%20%D9%88%D8%B5%D9%81%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA/G10506/11.jpg?1690714124758" alt="عصا سحرية من سلسلة هاري بوتر">
+            عصا سحرية بتصميم فريد
+            <p class="product-price">السعر: 650 EGP</p>
+            <div class="product-details">تفاصيل المنتج: عصا سحرية مستوحاة من عالم الخيال.</div>
+        </li>
+    </ul>
+</body>
+</html>
